@@ -41,4 +41,6 @@ Use signed integer literals with positive variable `3*i+j+1` for `x(i,j)`. The m
 
 ## Proof direction
 
+`RUPReduction.lean` proves assumption replay for `UPForces` and the RUP rule for dropping literals whose complements already propagate. Both declarations passed Lean 4.36.0 with the standard three axioms. To replay from a built project, run `lake env lean ../research/L-meta-9204/RUPReduction.lean` from `lean/`.
+
 First encode the five-step propagation table with the existing `UPForces.hyp` and `UPForces.unit` constructors to validate the formula and sign conventions in Lean. For the lower bound, formalize the consistent-closure lemma and singleton reduction, then connect a finite checker to the exact proposition. Keeping symmetry optional gives a simpler first Lean specification for the finite search. Beame, Kautz and Sabharwal provide the clause-learning proof-system background. Cruz-Filipe et al. describe checked propagation certificates and their translation into verified checker inputs. [Clause learning](https://www.cs.cornell.edu/~sabhar/publications/learnJAIR04.pdf) · [Efficient Verified (UN)SAT Certificate Checking](https://link.springer.com/article/10.1007/s10817-019-09525-z)
